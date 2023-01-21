@@ -5,17 +5,20 @@ public class Palindrome {
 	}
 
 	public static boolean isPalindrome(int x) {
-		String num = Integer.toString(x);
-		String revnum = "";
-		for (int i = num.length() - 1; i >= 0; i--) {
-			revnum = revnum + num.charAt(i);
-		}
-		if (num.equalsIgnoreCase(revnum)) {
-			return true;
-		} else {
+		if (x < 0 || x % 10 == 0 && x != 0)
 			return false;
+		int c = 0;
+		while (x > c) {
+			c = c * 10 + x % 10;
+			x = x / 10;
+
 		}
+		System.out.println(x + " reverse " + c);
+		if (x == c)
+			return true;
+		if (c / 10 == x)
+			return true;
 
+		return false;
 	}
-
 }
