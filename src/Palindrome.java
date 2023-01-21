@@ -5,20 +5,20 @@ public class Palindrome {
 	}
 
 	public static boolean isPalindrome(int x) {
-		if (x < 0 || x % 10 == 0 && x != 0)
+		if (x < 0) {
 			return false;
-		int c = 0;
-		while (x > c) {
-			c = c * 10 + x % 10;
-			x = x / 10;
-
 		}
-		System.out.println(x + " reverse " + c);
-		if (x == c)
-			return true;
-		if (c / 10 == x)
-			return true;
+		int c = 0;
+		int d = x;
+		while (d > 0) {
+			c = c * 10 + d % 10;
+			d = d / 10;
+		}
 
+		if (x == c) {
+			return true;
+		}
 		return false;
 	}
+
 }
